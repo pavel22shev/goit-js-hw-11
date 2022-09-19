@@ -39,7 +39,7 @@ function submitFormEvtHandler(evt) {
   if(newsApiService.value.trim() === ''){
     Notify.failure("Empty, request!");
   }else{
-
+    newsApiService.resetPage()
     newsApiService.fetchArticles().then(images => {
       deleteMarkup();
       renderMarkup(images);
